@@ -1,0 +1,170 @@
+html, body {
+  margin: 0;
+  height: 100%;
+}
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  background: #fafafa;
+}
+h1 {
+  color: rgb(150, 94, 255);
+  text-align: center;
+  margin: 1.25rem 0;
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 15%;
+  padding: 10px;
+  background-color: #eee;
+  overflow-y: auto;
+}
+#left-container  { left: 0; }
+#right-container { right: 0; }
+
+.plant-holder {
+  position: relative;
+  height: 13%;
+  left: -10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.plant {
+  position: absolute;
+  max-width: 150%;
+  max-height: 150%;
+  z-index: 2;
+  transition: transform .2s ease, filter .2s ease;
+}
+.plant:hover {
+  transform: scale(1.05) rotate(-2deg);
+  filter: drop-shadow(0 6px 10px rgba(0,0,0,0.15));
+}
+
+#terrarium {
+  position: relative;
+  width: clamp(280px, 60vmin, 620px);
+  aspect-ratio: 3 / 4;
+  margin: 2rem auto 4rem;
+}
+
+.jar-walls {
+  position: absolute;
+  left: 10%;
+  bottom: 0.5%;
+  width: 80%;
+  height: 80%;
+  background: rgba(209, 225, 223, 0.55);
+  border-radius: 1rem;
+  border: 2px solid rgba(0,0,0,0.06);
+  box-shadow:
+    inset 0 0 30px rgba(255,255,255,0.35),
+    0 10px 20px rgba(0,0,0,0.08);
+  z-index: 1;
+}
+
+.jar-top {
+  position: absolute;
+  left: 23%;
+  bottom: 81%;
+  width: 55%;
+  height: 2%;
+  background: rgba(209, 225, 223, 0.7);
+  border-radius: .5rem .5rem 0 0;
+  border: 2px solid rgba(0,0,0,0.05);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+  z-index: 2;
+}
+
+.jar-bottom {
+  position: absolute;
+  left: 25%;
+  bottom: 0%;
+  width: 50%;
+  height: 1%;
+  background: rgba(209, 225, 223, 0.75);
+  border-radius: 0 0 .5rem .5rem;
+  border-top: 1px solid rgba(0,0,0,0.06);
+  z-index: 2;
+}
+
+.dirt {
+  position: absolute;
+  left: 10%;
+  bottom: 1%;
+  width: 81%;
+  height: 11%;
+  background: hsla(18, 25%, 34%, 0.8);
+  border-radius: 0 0 1rem 1rem;
+  box-shadow: inset 0 6px 12px rgba(0,0,0,0.25);
+  z-index: 2; 
+}
+
+/* 유리 반사 */
+.jar-glossy-long {
+  position: absolute;
+  top: 10%;
+  left: 18%;
+  width: 16%;
+  height: 55%;
+  border-radius: 2rem;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.85) 0%,
+    rgba(255,255,255,0.35) 40%,
+    rgba(255,255,255,0) 100%
+  );
+  filter: blur(0.3px);
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.jar-glossy-short {
+  position: absolute;
+  top: 28%;
+  left: 40%;
+  width: 6%;
+  height: 25%;
+  border-radius: 2rem;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.9) 0%,
+    rgba(255,255,255,0.4) 70%,
+    rgba(255,255,255,0) 100%
+  );
+  filter: blur(0.4px);
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 3;
+}
+
+@media (max-width: 1200px) {
+  .container { width: 14%; }
+  #terrarium { width: clamp(260px, 62vmin, 560px); }
+}
+
+#terrarium {
+  position: relative;
+  width: clamp(400px, 60vmin, 800px);
+  aspect-ratio: 3 / 4;
+  margin: 2rem auto 4rem;
+  overflow: visible;
+}
+
+.plant-in-jar {
+  position: absolute;           /* terrarium 내부에서 좌표 지정 가능 */
+  max-width: 30%;               /* 너무 크게 안 보이게 축소 */
+  max-height: 30%;
+  cursor: grab;
+  z-index: 10;                  /* 시작 기본값: 병 안에서는 기본적으로 위에 */
+  transition: transform .15s ease, filter .15s ease;
+}
+
+.plant-in-jar:hover {
+  transform: scale(1.08) rotate(-2deg);
+  filter: drop-shadow(0 8px 12px rgba(0,0,0,0.25));
+}
