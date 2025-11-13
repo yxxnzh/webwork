@@ -1,0 +1,139 @@
+body {
+  background-color: #b3e5fc;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  color: #333;
+  text-align: center;
+}
+
+.container {
+  background-color: white;
+  padding: 40px 60px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  max-width: 700px;
+}
+
+h1 {
+  margin-bottom: 10px;
+  color: #0d47a1;
+}
+
+.description {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+#quote {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.input-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+#typed-value {
+  padding: 10px 15px;
+  width: 70%;
+  font-size: 1rem;
+  border: 2px solid #90caf9;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.2s;
+}
+
+#typed-value.typing {
+  transform: scale(1.03);
+  box-shadow: 0 0 10px rgba(66, 165, 245, 0.8);
+}
+
+#typed-value:focus {
+  border-color: #42a5f5;
+  box-shadow: 0 0 5px #64b5f6;
+}
+
+#start {
+  background: linear-gradient(135deg, #42a5f5, #1e88e5);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#start:hover {
+  background: linear-gradient(135deg, #64b5f6, #1976d2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#start.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+.highlight {
+  background-color: yellow;
+}
+
+.error {
+  background-color: lightcoral;
+  border: 2px solid red;
+}
+
+#message {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 15px;
+  color: #0d47a1;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  position: relative;
+  background: #ffffff;
+  padding: 25px 35px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  min-width: 260px;
+  text-align: center;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #0d47a1;
+}
+
+.close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 20px;
+  cursor: pointer;
+}

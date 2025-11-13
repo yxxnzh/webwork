@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Typing game</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Typing game!</h1>
+    <p class="description">
+      Practice your typing skills with a quote from Sherlock Holmes.
+      Click <strong>Start</strong> to begin!
+    </p>
+
+    <p id="quote"></p>
+    <p id="message"></p>
+
+    <div class="input-area">
+      <input type="text" aria-label="current word" id="typed-value" />
+      <button type="button" id="start">
+        <i class="fa-regular fa-cloud"></i> Start
+      </button>
+    </div>
+  </div>
+
+  <!-- 모달 창 -->
+  <div id="result-modal" class="modal hidden">
+    <div class="modal-content">
+      <span id="close-modal" class="close">&times;</span>
+      <h2>Result</h2>
+      <p id="modal-current"></p>
+      <p id="modal-best"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
